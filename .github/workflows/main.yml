@@ -43,4 +43,4 @@ jobs:
       with:
         exec-path: "task-ci/bin/CTestExe"
         report-path: "report.xml"
-        working-directory: "./../"
+        # working-directory: "./../"
