@@ -22,7 +22,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: update submodules
+    - name: update submodules and build
       shell: bash
       run: |
         git submodule update --init --recursive
@@ -43,4 +43,4 @@ jobs:
       with:
         exec-path: "task-ci/bin/CTestExe"
         report-path: "report.xml"
-        working-directory: "test4"
+        working-directory: "./../"
