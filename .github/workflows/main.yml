@@ -22,6 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: update submodules
+      shell: bash
+      run: |
+        git submodule update --init --recursive
+        cmake -B build
+        cd build
+        make
+        pwd
+
     # Runs a single command using the runners shell
     - name: Run a one-line script
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
