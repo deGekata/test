@@ -28,12 +28,18 @@ jobs:
         git submodule update --init --recursive
         cd task-ci
         cmake -B_build
-        cd build
+        cd _build
         make
         pwd
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      uses: akhtyamovpavel/ActionGtestReport@v0.0.9
-      with:
-        who-to-greet: 'Mona the Octocat'
+    - name: UploadArtifacts
+      uses: actions/upload-artifact@v1
+      with: 
+        name: Distributive
+        path: /home/runner/work/test/test/task-ci/bin
+
+    # # Runs a single command using the runners shell
+    # - name: Run a one-line script
+    #   uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+    #   with:
+    #     who-to-greet: 'Mona the Octocat'
