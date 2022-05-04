@@ -26,7 +26,8 @@ jobs:
       shell: bash
       run: |
         git submodule update --init --recursive
-        cmake -B build
+        cd task-ci
+        cmake -B_build
         cd build
         make
         pwd
